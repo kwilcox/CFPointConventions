@@ -1,7 +1,7 @@
-netcdf timeSeries-Orthogonal-Multidimenstional-MultipleStations-H.2.1 {
+netcdf timeSeries-Orthogonal-Multidimensional-MultipleStations-H.2.1 {
 dimensions:
 	station = 10 ;
-	time = UNLIMITED ; // (100 currently)
+	time = 100 ;
 	name_strlen = 50 ;
 variables:
 	float lat(station) ;
@@ -26,13 +26,13 @@ variables:
 		time:standard_name = "time" ;
 		time:units = "seconds since 1990-01-01 00:00:00" ;
 		time:missing_value = -999 ;
-	float temperature(time, station) ;
+	float temperature(station, time) ;
 		temperature:long_name = "Air Temperature" ;
 		temperature:standard_name = "air_temperature" ;
 		temperature:units = "Celsius" ;
 		temperature:coordinates = "lat lon alt" ;
 		temperature:missing_value = -999.9f ;
-	float humidity(time, station) ;
+	float humidity(station, time) ;
 		humidity:long_name = "Humidity" ;
 		humidity:standard_name = "specific_humidity" ;
 		humidity:units = "Percent" ;
